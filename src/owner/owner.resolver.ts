@@ -6,14 +6,14 @@ import { UpdateOwnerInput } from './dto/update-owner.input';
 
 @Resolver(() => Owner)
 export class OwnerResolver {
-  constructor(private readonly ownerService: OwnerService) {}
+  constructor(private readonly ownerService: OwnerService) { }
 
   @Mutation(() => Owner)
   createOwner(@Args('createOwnerInput') createOwnerInput: CreateOwnerInput) {
     return this.ownerService.create(createOwnerInput);
   }
 
-  @Query(() => [Owner], { name: 'owner' })
+  @Query(() => [Owner], { name: 'owners' })
   findAll() {
     return this.ownerService.findAll();
   }

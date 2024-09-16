@@ -10,5 +10,4 @@ export class CreatePetInput {
 
   @Field(() => Int)
   ownerId: number;
-
 }
